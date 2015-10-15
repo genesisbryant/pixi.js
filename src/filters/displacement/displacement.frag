@@ -11,10 +11,12 @@ uniform sampler2D mapSampler;
 
 void main(void)
 {
-   vec4 map =  texture2D(mapSampler, vMapCoord);
+    vec4 original =  texture2D(uSampler, vTextureCoord);
+    vec4 map =  texture2D(mapSampler, vMapCoord);
+    
+    map -= 0.5;
+    map.xy *= scale;
+    
+    gl_FragColor = texture2D(uSampler, vec2(vTextureCoord.x + map.x, vTextureCoord.y + map.y));
 
-   map -= 0.5;
-   map.xy *= scale;
-
-   gl_FragColor = texture2D(uSampler, vec2(vTextureCoord.x + map.x, vTextureCoord.y + map.y));
 }

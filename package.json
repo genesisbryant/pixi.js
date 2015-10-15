@@ -32,6 +32,9 @@
   "dependencies": {
     "async": "^1.4.2",
     "brfs": "^1.4.1",
+
+    "gl-matrix": "^2.1.0",
+
     "earcut": "^2.0.2",
     "eventemitter3": "^1.1.1",
     "gulp-header": "^1.7.1",
